@@ -1,0 +1,54 @@
+pipeline{
+    agent{
+        label "node"
+    }
+    stages{
+        stage("echo a line"){
+            steps{
+                echo "This is step one"
+            }
+        }
+        stage("Run a command"){
+            steps{
+                sh 'pwd'
+            }
+        }
+
+         stage("Run multiple command"){
+            steps{
+                sh '''pwd
+                    date
+                    cal
+                    ls'''
+            }
+        }
+         stage("Input"){
+            steps{
+                input 'Hello World!'
+            }
+        }
+            post{
+                always{
+                    echo "========always========"
+                }
+                success{
+                    echo "========A executed successfully========"
+                }
+                failure{
+                    echo "========A execution failed========"
+                }
+            }
+        }
+    }
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
+    }
+}
