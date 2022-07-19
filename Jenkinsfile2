@@ -20,11 +20,6 @@ pipeline{
                     ls'''
             }
         }
-         stage("Input"){
-            steps{
-                input 'Hello World!'
-            }
-        }
       }
      post{
          always{
