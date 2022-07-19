@@ -25,6 +25,7 @@ pipeline{
                 input 'Hello World!'
             }
         }
+      }
      post{
          always{
                   echo "========always========"
