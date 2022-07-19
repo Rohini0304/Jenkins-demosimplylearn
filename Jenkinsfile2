@@ -25,9 +25,9 @@ pipeline{
                 input 'Hello World!'
             }
         }
-            post{
-                always{
-                    echo "========always========"
+     post{
+         always{
+                  echo "========always========"
                 }
                 success{
                     echo "========A executed successfully========"
